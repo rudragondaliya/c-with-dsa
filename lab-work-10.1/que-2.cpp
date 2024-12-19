@@ -16,4 +16,4 @@ int main(){
     cout<<"enter the number:";
     cin>>d1;
     division(d1);
-}
+}   

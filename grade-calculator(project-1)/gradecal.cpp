@@ -18,7 +18,7 @@ int main(){
             (score<=79  && score>=70)  ? 'C':
             (score<=69  && score>=60)  ? 'D' :
             (score<=59  && score>=33)  ? 'E':
-            (score<=0  && score>=33)  ? 'F' : 'F';
+            (score<=0   && score>=33)  ? 'F' : 'F';
 
             cout<<"your Grade is:"<<grade<<endl;
 
