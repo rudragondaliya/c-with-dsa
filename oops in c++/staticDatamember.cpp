@@ -1,39 +1,70 @@
+// static member functiom
+
 #include<iostream>
 using namespace std;
 
-class Customer 
-{
+class Customer {
+    
     string name;
     int acc_no,bal;
-     static int Total_customer;
+    static int total_customer;
+    static int total_bal;
 
     public:
-    Customer(string name,int acc_no ,int bal)
-    {
+       
+    Customer(string name,int acc_no,int bal){
+
         this->name = name;
         this->acc_no = acc_no;
         this->bal = bal;
-        Total_customer++;
+        total_customer++;
+        total_bal+=bal;
     }
 
-     void display(){
-        cout<<name<<" "<<acc_no<<" "<<bal<<" "<<Total_customer<<endl;
-     }
+    void display(){
+        cout<<name<<" "<<acc_no<<" "<<bal<<" "<<total_customer<<endl;
+    }
 
-     void display_total()
-     {
-        cout<<Total_customer<<endl;
-     }
+    void display_total(){
+        cout<<total_customer<<endl;
+        cout<<total_bal<<endl;
 
+    }
+
+    void deposit(int amt){
+        if(amt>0){
+            bal+=amt;
+            total_bal+=amt;
+        }
+    }
+
+    void withdraw(int amt){
+        if(amt<=bal && amt>0){
+            bal-=amt;
+            total_bal-=amt;
+        }
+    }
+
+    static void acesstatic(){
+        cout<<"total no of customer:"<<total_customer<<endl;
+        cout<<"total balance:"<<total_bal<<endl;
+    }
 };
-  
-    int Customer::Total_customer=0;
+
+ int Customer::total_customer = 0;
+ int Customer::total_bal = 0;
 
 int main(){
 
-    Customer A1("rudra",1,10000);
-    Customer A2("rushabh",2,2000);
-    A2.display_total();
-    Customer A3("rohan",3,10000);
-    A2.display_total();
+    Customer A1("rohit",1,1000);
+    Customer A2("rohan",2,19000);
+    Customer A3("rushabh",3,1000);
+    A1.deposit(1000);
+    A2.withdraw(200);
+    Customer::acesstatic();
+
+  
+    
+
+
 }
