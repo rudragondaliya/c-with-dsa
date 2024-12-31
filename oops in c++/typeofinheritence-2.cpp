@@ -166,40 +166,98 @@ using namespace std;
 
 //  HYBRID INHERITENCE
 
-  class Student{
-     public:
-     void print(){
-        cout<<"i am a student"<<endl;
-     }
-  };
+//   class Student{
+//      public:
+//      void print(){
+//         cout<<"i am a student"<<endl;
+//      }
+//   };
 
-  class Boy : public Student, public Male{
-     public:
-     void Boypri(){
-        cout<<"i am boy"<<endl; 
-     }
-  };
 
-  class Girl : public Student , public FeMale{ 
-     public:
-     void girlpri(){
-        cout<<"i am girl"<<endl; 
-     }
-  };
+//     class Male{
+//     public:
+//     void male(){
+//         cout<<"i am male"<<endl;
+//     }
+//   };
 
-  class Male{
+//     class FeMale{
+//     public:
+//     void female(){
+//         cout<<"i am female"<<endl;
+//     }
+//   };
+
+//   class Boy : public Student, public Male{
+//      public:
+//      void Boypri(){
+//         cout<<"i am boy"<<endl; 
+//      }
+//   };
+
+//   class Girl : public Student , public FeMale{ 
+//      public:
+//      void girlpri(){
+//         cout<<"i am girl"<<endl; 
+//      }
+//   };
+
+
+// MULTIPATH INHERITENCE
+
+class Huaman{
     public:
-    void male(){
-        cout<<"i am male"<<endl;
-    }
-  };
+    string name;
 
-    class FeMale{
-    public:
-    void female(){
-        cout<<"i am female"<<endl;
+    void display(){
+      cout<<"my name is "<<name<<endl;
     }
-  };
+
+};
+
+class Engineer : public virtual Huaman{
+
+        public:
+        string specialization;
+
+        void work(){
+            cout<<"i have specialization in: "<<specialization<<endl;
+        }
+     };
+
+class Youtuber : public virtual Huaman{
+
+    public:
+    int subscriber;
+
+    void content_creator(){
+
+        cout<<"i have a subscribwer base of: "<<subscriber<<endl;
+    }
+};
+
+class CodeTeacher : public Engineer, public Youtuber
+{
+    public:
+    int salary;
+
+    CodeTeacher(string name , string specialization,int subscriber,int salary)
+    {
+        this->name = name;
+        this->specialization = specialization;
+        this->subscriber = subscriber;
+        this->salary = salary;
+    }
+
+   
+        
+    };
+
+
+
+
+ 
+
 
 
 
@@ -228,7 +286,15 @@ int main(){
 
     // HYBRID INHERITENCE
     
-    Girl G1;
-    G1.girlpri();
+   //  Girl G1;
+   //  G1.print();
+   //  G1.girlpri();
 
+   //  Boy B1;
+   //  B1.Boypri();
+    
+   //  MULTIPATH INHERITENCE
+
+     CodeTeacher A1("rudra","bca",1000,200000);
+     A1.display();
 }
