@@ -1,25 +1,26 @@
-#include <iostream>
+#include<iostream>
 using namespace std;
 
-main(){
-	
-	int i,j,k; 
-	
-for ( i=0;i<5;i++) 
-  {
-  	
-    for(k=0;k<5-i;k++) 
-    {
-      cout<<"  ";
+int main(){
+
+    int n=5,i,j,k;
+
+    for(i=0;i<=n;i++){
+        for(k=0;k<i;k++){
+            cout<<"  ";
+        }
+
+        for(j=0;j<n-i;j++){
+            if(j%2==0){
+                cout<<"1 ";
+            }
+            else{
+                cout<<"0 ";
+            }
+        }
+
+        cout<<endl;
     }
-    for(j=5-i;j<=5;j++) 
-    {
-      cout<<j<<" ";
-    }
-    for(j=4;j>=5-i;j--) 
-    {
-	cout<<j<<" ";
-    }
-      cout<<endl; 
-  }
+
+    return 0;
 }
