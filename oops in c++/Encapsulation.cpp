@@ -7,33 +7,33 @@ class Customer {
     
   
     string name;
-    int acc_no,bal,age;
+    int acc_no,bal;
   
     public:
        
-    Customer(string name,int acc_no,int bal,int age){
+    Customer(string name,int acc_no,int bal){
 
         this->name = name;
         this->acc_no = acc_no;
         this->bal = bal;
-        this->age = age;
+      
        
     }
 
     void display(){
-        cout<<name<<" "<<acc_no<<" "<<bal<<" "<<age<<endl;
+        cout<<name<<" "<<acc_no<<" "<<bal<<endl;
     }
 
 
-   void updateage(int age){
+//    void updateage(int age){
 
-    if(age>0 && age<=100){
-        this->age = age;
-    }
-    else{
-        cout<<"inavalid age"<<endl;
-    }
-   }
+//     if(age>0 && age<=100){
+//         this->age = age;
+//     }
+//     else{
+//         cout<<"inavalid age"<<endl;
+//     }
+//    }
    
 
     void deposit(int amt){
@@ -60,11 +60,13 @@ class Customer {
 
 int main(){
 
-    Customer A1("rohit",1,1000,3);
-    Customer A2("rohan",2,19000,5);
-    Customer A3("rushabh",3,1000,6);
-    A1.updateage(-24);
+    Customer A1("rohit",1,1000);
+    Customer A2("rohan",2,19000);
+    Customer A3("rushabh",3,1000);
     A1.display();
+    A2.display();
+    A3.display();
+    A1.deposit(2000);
 
 
   

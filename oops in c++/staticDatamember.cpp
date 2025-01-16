@@ -17,16 +17,16 @@ class Customer {
         this->name = name;
         this->acc_no = acc_no;
         this->bal = bal;
-        total_customer++;
+        // total_customer++;
         total_bal+=bal;
     }
 
     void display(){
-        cout<<name<<" "<<acc_no<<" "<<bal<<" "<<total_customer<<endl;
+        cout<<name<<" "<<acc_no<<" "<<bal<<endl;
     }
 
     void display_total(){
-        cout<<total_customer<<endl;
+        // cout<<total_customer<<endl;
         cout<<total_bal<<endl;
 
     }
@@ -59,9 +59,11 @@ int main(){
     Customer A1("rohit",1,1000);
     Customer A2("rohan",2,19000);
     Customer A3("rushabh",3,1000);
-    A1.deposit(1000);
-    A2.withdraw(200);
-    Customer::acesstatic();
+    A1.deposit(2000);
+    A2.withdraw(3000);
+    A1.display();
+    A2.display();
+    // Customer::acesstatic();
 
   
     
